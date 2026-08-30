@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------
+   KG EEFELKANK e.V., Design Tokens
+
+   Grundidee: Sessionsplakat statt Dashboard. Cremefarbenes Papier als
+   Grundflaeche, dazu die Vereinsfarben Rot und Weiss, Ordensgold und ein
+   tiefes Pflaume fuer die Abendsektionen. Die Sektionen wechseln bewusst
+   die Farbe, das gibt der Seite den Rhythmus eines gedruckten Programms.
+------------------------------------------------------------------ */
+@theme {
+  /* Papier */
+  --color-creme: #fbf5ea;
+  --color-creme-2: #f3e7d2;
+  --color-creme-3: #e8d7bb;
+
+  /* Tinte */
+  --color-tinte: #1c1016;
+  --color-tinte-2: #3a2630;
+  --color-tinte-3: #6b5560;
+
+  /* Vereinsfarben */
+  --color-rot: #d5122a;
+  --color-rot-2: #a80f21;
+  --color-rot-3: #6d0715;
+  --color-gold: #c8912c;
+  --color-gold-2: #eabc51;
+  --color-pflaume: #3d0f33;
+  --color-pflaume-2: #290a22;
+
+  /* Zusatzfarben fuer die Gruppen (Karneval darf bunt sein) */
+  --color-jeck-gruen: #1d6e5c;
+  --color-jeck-blau: #21518c;
+  --color-jeck-orange: #e2661f;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.5rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 34s linear infinite;
+  --animate-marquee-slow: marquee 58s linear infinite;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-spin-slow: spin 26s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(8deg); }
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+    --nav-h: 4.5rem;
   }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-creme);
+    color: var(--color-tinte);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-rot);
+    color: var(--color-creme);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-rot);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Kleines Label ueber Ueberschriften */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* Harlekin-Raute: das Karnevalsmuster schlechthin */
+  .muster-raute {
+    background-image:
+      linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%),
+      linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+  }
+
+  /* Schraeg gestreiftes Band, wie Kirmesplane */
+  .muster-streifen {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      currentColor 0px,
+      currentColor 10px,
+      transparent 10px,
+      transparent 22px
+    );
+  }
+
+  /* Konfetti-Punkte */
+  .muster-punkte {
+    background-image: radial-gradient(currentColor 1.6px, transparent 1.7px);
+    background-size: 22px 22px;
+  }
+
+  /*
+   * Papierstruktur.
+   *
+   * Bewusst als gekacheltes Hintergrundbild auf dem Body und nicht als
+   * fixe Ebene mit mix-blend-mode: Eine blendende Vollbildschicht zwingt
+   * die gesamte Seite in eine einzige Compositing-Ebene. Beim Vergrößern
+   * des Fensters muss Chrome dann alles neu rastern und zeigt so lange
+   * weiße Flächen.
+   */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Unterstrichener Link, der beim Hover durchlaeuft */
+  .link-wisch {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    transition: background-size 0.45s var(--ease-out-expo);
+  }
+  .link-wisch:hover { background-size: 100% 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
