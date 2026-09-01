@@ -217,8 +217,8 @@ export function VereinsheimMieten() {
                     </a>
                   </Button>
                   <Button asChild size="lg" variant="outlineHell">
-                    <a href="mailto:info@eefelkank.de?subject=Anfrage%20Vereinsheim">
-                      Anfrage per Mail
+                    <a href="#buchung">
+                      Belegung ansehen
                       <ArrowRight aria-hidden />
                     </a>
                   </Button>

@@ -82,7 +82,9 @@ export function Events({
                     onClick={() => setFilter(cat)}
                     className={cn(
                       "relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
-                      active ? "text-pflaume" : "text-creme/70 hover:text-creme"
+                      active
+                        ? "text-pflaume"
+                        : "text-creme/70 hover:text-creme",
                     )}
                   >
                     {active && (
@@ -145,68 +147,73 @@ function EventZeile({ event }: { event: ClubEvent }) {
   const d = splitDate(event.date);
 
   return (
-    <article className="group relative grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 py-7 sm:grid-cols-[auto_auto_1fr_auto] sm:items-center sm:gap-x-7 sm:py-8">
-      <div className="flex flex-col items-start">
-        <span className="font-display text-4xl font-black leading-none text-gold-2 sm:text-5xl">
-          {d.day}
-        </span>
-        <span className="mt-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-creme/70">
-          {d.month} {d.year}
-        </span>
-      </div>
-
-      {/* Bild aus dem Archiv, gibt jedem Termin ein Gesicht */}
-      <div className="col-start-2 row-start-1 w-28 shrink-0 overflow-hidden rounded-xl border-[3px] border-creme/25 sm:col-start-2 sm:w-40">
-        <Photo
-          src={event.image}
-          alt={`Eindruck von der Veranstaltung ${event.title}`}
-          sizes="180px"
-          className="aspect-[3/2] w-full"
-          imgClassName="transition-transform duration-[1.1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.08]"
-        />
-      </div>
-
-      <div className="col-span-2 min-w-0 sm:col-span-1 sm:col-start-3">
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="font-display text-2xl font-bold sm:text-3xl">
-            <Link
-              href={`/veranstaltungen/${event.id}`}
-              className="transition-colors duration-300 after:absolute after:inset-0 after:content-[''] group-hover:text-gold-2"
-            >
-              {event.title}
-            </Link>
-          </h3>
-          {event.soldOut && (
-            <span className="rounded-full bg-creme/15 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.14em] text-creme">
-              Ausverkauft
-            </span>
-          )}
-          {event.highlight && !event.soldOut && (
-            <span className="rounded-full bg-gold-2 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.14em] text-pflaume">
-              Höhepunkt
-            </span>
-          )}
-        </div>
-        <p className="mt-2.5 max-w-2xl leading-relaxed text-creme/80">
-          {event.description}
-        </p>
-        <p className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-creme/60">
-          <span>{formatWeekday(event.date)}</span>
-          <span className="font-semibold text-creme/90">{event.time}</span>
-          <span className="inline-flex items-center gap-1.5">
-            <MapPin className="size-3.5 text-gold-2" aria-hidden />
-            {event.venue}
-          </span>
-        </p>
-      </div>
-
-      <span
-        aria-hidden
-        className="col-span-2 inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-2 border-gold-2 px-5 py-3 text-sm font-semibold text-gold-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:bg-gold-2 group-hover:text-pflaume sm:col-span-1 sm:col-start-4"
+    /*
+     * Die ganze Zeile ist der Link, nicht nur die Überschrift. Vorher lag
+     * eine unsichtbare Klickfläche der Überschrift hinter Text und Knopf,
+     * beides fing die Klicks ab. Der Knopf „Details“ bleibt reine Optik.
+     */
+    <article className="group">
+      <Link
+        href={`/veranstaltungen/${event.id}`}
+        className="grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 py-7 sm:grid-cols-[auto_auto_1fr_auto] sm:items-center sm:gap-x-7 sm:py-8"
       >
-        Details
-        <ArrowRight className="size-4" />
-      </span>
+        <div className="flex flex-col items-start">
+          <span className="font-display text-4xl font-black leading-none text-gold-2 sm:text-5xl">
+            {d.day}
+          </span>
+          <span className="mt-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-creme/70">
+            {d.month} {d.year}
+          </span>
+        </div>
+
+        {/* Bild aus dem Archiv, gibt jedem Termin ein Gesicht */}
+        <div className="col-start-2 row-start-1 w-28 shrink-0 overflow-hidden rounded-xl border-[3px] border-creme/25 sm:col-start-2 sm:w-40">
+          <Photo
+            src={event.image}
+            alt={`Eindruck von der Veranstaltung ${event.title}`}
+            sizes="180px"
+            className="aspect-[3/2] w-full"
+            imgClassName="transition-transform duration-[1.1s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.08]"
+          />
+        </div>
+
+        <div className="col-span-2 min-w-0 sm:col-span-1 sm:col-start-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="font-display text-2xl font-bold transition-colors duration-300 group-hover:text-gold-2 sm:text-3xl">
+              {event.title}
+            </h3>
+            {event.soldOut && (
+              <span className="rounded-full bg-creme/15 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.14em] text-creme">
+                Ausverkauft
+              </span>
+            )}
+            {event.highlight && !event.soldOut && (
+              <span className="rounded-full bg-gold-2 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-[0.14em] text-pflaume">
+                Höhepunkt
+              </span>
+            )}
+          </div>
+          <p className="mt-2.5 max-w-2xl leading-relaxed text-creme/80">
+            {event.description}
+          </p>
+          <p className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-creme/60">
+            <span>{formatWeekday(event.date)}</span>
+            <span className="font-semibold text-creme/90">{event.time}</span>
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="size-3.5 text-gold-2" aria-hidden />
+              {event.venue}
+            </span>
+          </p>
+        </div>
+
+        <span
+          aria-hidden
+          className="col-span-2 inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-2 border-gold-2 px-5 py-3 text-sm font-semibold text-gold-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 group-hover:bg-gold-2 group-hover:text-pflaume sm:col-span-1 sm:col-start-4"
+        >
+          Details
+          <ArrowRight className="size-4" />
+        </span>
+      </Link>
     </article>
   );
 }

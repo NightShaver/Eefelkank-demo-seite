@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/page-header";
 import { VereinsheimMieten } from "@/components/site/vereinsheim";
+import { Buchung } from "@/components/site/buchung";
 import { vereinsheim } from "@/lib/data/site";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function VermietungPage() {
         ton="gold"
       />
       <VereinsheimMieten />
+      <Buchung />
     </>
   );
 }

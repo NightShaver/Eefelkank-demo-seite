@@ -42,3 +42,7 @@ next-env.d.ts
 
 # lokaler Testserver für den Export
 /.serve/
+
+# Werkzeug-Dateien, gehoeren nicht ins Repository
+/AGENTS.md
+/CLAUDE.md
