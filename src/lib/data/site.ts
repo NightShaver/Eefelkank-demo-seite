@@ -6,6 +6,8 @@
  * bestätigen muss, ist im Code als solches gekennzeichnet.
  */
 
+import startseite from "./generated/startseite.json";
+
 export const site = {
   name: "KG Eefelkank e.V.",
   longName: "KG Eefelkank Eschweiler-Hastenrath von 1938 e.V.",
@@ -56,27 +58,7 @@ export const site = {
    * Initialen den Rahmen. Die drei vorhandenen Porträts hat der Verein
    * beigesteuert; die Bildrechte sind vor dem Livegang zu bestätigen.
    */
-  vorstand: [
-    {
-      name: "Michael Schümmer",
-      role: "1. Präsident",
-      initialen: "MS",
-      foto: "/bilder/vorstand/michael-schuemmer.jpg",
-    },
-    {
-      name: "Christian Wolny",
-      role: "1. Vorsitzender",
-      initialen: "CW",
-      foto: "/bilder/vorstand/christian-wolny.jpg",
-    },
-    { name: "Jürgen Engelhardt", role: "1. Kassierer", initialen: "JE" },
-    {
-      name: "Markus Breuer",
-      role: "1. Geschäftsführer",
-      initialen: "MB",
-      foto: "/bilder/vorstand/markus-breuer.jpg",
-    },
-  ] as { name: string; role: string; initialen: string; foto?: string }[],
+  vorstand: startseite.vorstand as { name: string; role: string; initialen: string; foto?: string }[],
 } as const;
 
 /**

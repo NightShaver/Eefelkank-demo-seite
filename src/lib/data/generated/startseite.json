@@ -1,0 +1,71 @@
+{
+  "archivbilder": [
+    {
+      "src": "/bilder/cms/garde-formation.jpg",
+      "alt": "Formation auf der Bühne",
+      "spruch": "Wenn die Halle voll ist, ist der Winter vorbei.",
+      "quelle": "Große Sitzung, Dorfgemeinschaftshalle"
+    },
+    {
+      "src": "/bilder/cms/garde-aktion.jpg",
+      "alt": "Volle Kraft",
+      "spruch": "Drei Monate Training für elf Minuten Bühne.",
+      "quelle": "Damengarde Rot-Weiß"
+    },
+    {
+      "src": "/bilder/cms/kindergarde.jpg",
+      "alt": "Kindersitzung",
+      "spruch": "Hier fängt jede Karnevalskarriere an.",
+      "quelle": "Kinder- und Jugendtanzgruppe"
+    },
+    {
+      "src": "/bilder/cms/elferrat-orden.jpg",
+      "alt": "Elferrat mit Orden",
+      "spruch": "Ein Orden wiegt wenig und bedeutet viel.",
+      "quelle": "Elferrat"
+    },
+    {
+      "src": "/bilder/cms/publikum-krawall.jpg",
+      "alt": "Hastenrather Nachmittag",
+      "spruch": "Alaaf ist kein Wort, das ist eine Lautstärke.",
+      "quelle": "Sessionsabend"
+    },
+    {
+      "src": "/bilder/cms/tanzpaar.jpg",
+      "alt": "Tanzpaar",
+      "spruch": "Einmal im Jahr steht Hastenrath unter Strom.",
+      "quelle": "Bühnenshow"
+    },
+    {
+      "src": "/bilder/cms/aufbau-helme.jpg",
+      "alt": "Anpacken für die Halle",
+      "spruch": "Vor dem Feiern kommt das Schleppen.",
+      "quelle": "Aufbau und Hallenbau"
+    }
+  ],
+  "vorstand": [
+    {
+      "name": "Michael Schümmer",
+      "role": "1. Präsident",
+      "initialen": "MS",
+      "foto": "/bilder/cms/michael-schuemmer.jpg"
+    },
+    {
+      "name": "Christian Wolny",
+      "role": "1. Vorsitzender",
+      "initialen": "CW",
+      "foto": "/bilder/cms/christian-wolny.jpg"
+    },
+    {
+      "name": "Jürgen Engelhardt",
+      "role": "1. Kassierer",
+      "initialen": "JE"
+    },
+    {
+      "name": "Markus Breuer",
+      "role": "1. Geschäftsführer",
+      "initialen": "MB",
+      "foto": "/bilder/cms/markus-breuer.jpg"
+    }
+  ]
+}

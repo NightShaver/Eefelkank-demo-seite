@@ -3,6 +3,9 @@ name: GitHub Pages
 on:
   push:
     branches: [main]
+  # Wird vom CMS ausgeloest, sobald jemand Inhalte veroeffentlicht.
+  repository_dispatch:
+    types: [cms-aktualisierung]
   workflow_dispatch:
 
 permissions:
@@ -37,6 +40,11 @@ jobs:
           # Bei einem Projekt-Repository liegt die Seite unter /name-des-repos,
           # bei einer Benutzerseite unter /. Beides kommt von configure-pages.
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # Zugang zum CMS. Ohne CMS_API_KEY bricht der Bau nicht ab, sondern
+          # nimmt die zuletzt eingecheckten Inhalte aus src/lib/data/generated.
+          CMS_URL: https://cms.rocket-six.com
+          CMS_KUNDE: eefelkank
+          CMS_API_KEY: ${{ secrets.CMS_API_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

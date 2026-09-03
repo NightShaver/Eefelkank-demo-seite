@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { Photo } from "@/components/site/photo";
 import { Luftballons, Konfetti } from "@/components/site/ornament";
 import { cn } from "@/lib/utils";
+import startseite from "@/lib/data/generated/startseite.json";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -18,50 +19,7 @@ type Bild = { src: string; alt: string; spruch: string; quelle: string };
  * wechseln von selbst, lassen sich aber jederzeit anhalten und von Hand
  * weiterschalten. Bei `prefers-reduced-motion` läuft nichts automatisch.
  */
-const BILDER: Bild[] = [
-  {
-    src: "/bilder/garde-formation.jpg",
-    alt: "Die Garde in Formation auf der Bühne",
-    spruch: "Wenn die Halle voll ist, ist der Winter vorbei.",
-    quelle: "Große Sitzung, Dorfgemeinschaftshalle",
-  },
-  {
-    src: "/bilder/garde-aktion.jpg",
-    alt: "Die Garde mitten im Tanz",
-    spruch: "Drei Monate Training für elf Minuten Bühne.",
-    quelle: "Damengarde Rot-Weiß",
-  },
-  {
-    src: "/bilder/kindergarde.jpg",
-    alt: "Kindergarde in Rot und Weiß",
-    spruch: "Hier fängt jede Karnevalskarriere an.",
-    quelle: "Kinder- und Jugendtanzgruppe",
-  },
-  {
-    src: "/bilder/elferrat-orden.jpg",
-    alt: "Mitglieder des Elferrats mit Orden",
-    spruch: "Ein Orden wiegt wenig und bedeutet viel.",
-    quelle: "Elferrat",
-  },
-  {
-    src: "/bilder/publikum-krawall.jpg",
-    alt: "Feierndes Publikum im Saal",
-    spruch: "Alaaf ist kein Wort, das ist eine Lautstärke.",
-    quelle: "Sessionsabend",
-  },
-  {
-    src: "/bilder/tanzpaar.jpg",
-    alt: "Tanzpaar auf der Bühne",
-    spruch: "Einmal im Jahr steht Hastenrath unter Strom.",
-    quelle: "Bühnenshow",
-  },
-  {
-    src: "/bilder/aufbau-helme.jpg",
-    alt: "Mitglieder mit Bauhelmen beim Aufbau",
-    spruch: "Vor dem Feiern kommt das Schleppen.",
-    quelle: "Aufbau und Hallenbau",
-  },
-];
+const BILDER = startseite.archivbilder as Bild[];
 
 const WECHSEL = 5200;
 

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "damensitzung",
+    "title": "Damensitzung",
+    "date": "2027-01-14T17:00:00.000Z",
+    "time": "18:00 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Die ganz besondere Atmosphäre, die es nur auf einer Sitzung von und für Damen gibt.",
+    "image": "/bilder/cms/damensitzung-saal.jpg",
+    "soldOut": true
+  },
+  {
+    "id": "erste-grosse-sitzung",
+    "title": "Erste Große Sitzung",
+    "date": "2027-01-23T18:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Mit der Ersten Großen Sitzung starten wir traditionell in den Sitzungskarneval.",
+    "image": "/bilder/cms/korporalschaft-buehne.jpg",
+    "highlight": true
+  },
+  {
+    "id": "hastenrather-nachmittag",
+    "title": "Hastenrather Nachmittag",
+    "date": "2027-01-24T13:00:00.000Z",
+    "time": "14:00 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Für Jung und Alt, für die ganze Familie. In guter Tradition gibt es in der Pause ein Stück Kuchen, bitte einen Teller mitbringen.",
+    "image": "/bilder/cms/publikum-krawall.jpg"
+  },
+  {
+    "id": "kindersitzung",
+    "title": "Kindersitzung",
+    "date": "2027-01-30T13:00:00.000Z",
+    "time": "14:00 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Ein buntes Fest für unsere Jüngsten, bei dem alle Kinder stolz ihre Kostüme präsentieren.",
+    "image": "/bilder/cms/kindergarde.jpg"
+  },
+  {
+    "id": "fruehschoppen",
+    "title": "Messe in Rot & Weiß + Frühschoppen",
+    "date": "2027-01-31T10:00:00.000Z",
+    "time": "ab 09:00 Uhr",
+    "venue": "St. Wendelinus & Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Messe in Rot und Weiß nach kölschem Gebetbuch, danach der karnevalistische Frühschoppen.",
+    "image": "/bilder/cms/jecken-vier.jpg"
+  },
+  {
+    "id": "zweite-grosse-sitzung",
+    "title": "Zweite Große Sitzung",
+    "date": "2027-02-06T18:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Mit Vollgas ins Karnevalswochenende: Lachen, Schunkeln und vor allem Mitsingen.",
+    "image": "/bilder/cms/garde-hebefigur.jpg",
+    "highlight": true
+  },
+  {
+    "id": "karnevalsausklang",
+    "title": "Karnevalsausklang",
+    "date": "2027-02-09T18:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Gemeinsam lassen wir die Session ausklingen, bis zum nächsten Elften im Elften.",
+    "image": "/bilder/cms/publikum-rot.jpg"
+  }
+]

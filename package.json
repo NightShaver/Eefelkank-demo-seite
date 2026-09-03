@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/cms-holen.mjs && next build",
     "lint": "eslint",
-    "build:pages": "next build && node scripts/export-nachbereiten.mjs",
-    "vorschau": "npx --yes serve out"
+    "build:pages": "node scripts/cms-holen.mjs && next build && node scripts/export-nachbereiten.mjs",
+    "vorschau": "npx --yes serve out",
+    "cms:holen": "node scripts/cms-holen.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.20",
