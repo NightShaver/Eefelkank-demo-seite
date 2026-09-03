@@ -29,6 +29,8 @@ export type ClubEvent = {
   image: string;
   soldOut?: boolean;
   highlight?: boolean;
+  /** Kasten "Gut zu wissen" auf der Detailseite. Leer = kein Kasten. */
+  hinweise?: string[];
 };
 
 export const events = daten as ClubEvent[];

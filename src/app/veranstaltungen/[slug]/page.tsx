@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, MapPin, Ticket } from "lucide-react";
 import { events, getEvent } from "@/lib/data/events";
 import { site } from "@/lib/data/site";
-import hinweise from "@/lib/data/generated/hinweise.json";
 import { Photo } from "@/components/site/photo";
 import { Reveal, WordReveal } from "@/components/site/motion-primitives";
 import { Konfetti, Sticker, Wappen, ZickZack } from "@/components/site/ornament";
@@ -166,7 +165,7 @@ export default async function VeranstaltungPage({
                   <div className="relative">
                     <p className="eyebrow text-rot">Gut zu wissen</p>
                     <ul className="mt-5 space-y-4 text-tinte-2">
-                      {hinweise.map((hinweis) => (
+                      {(event.hinweise ?? []).map((hinweis: string) => (
                         <li key={hinweis}>{hinweis}</li>
                       ))}
                     </ul>

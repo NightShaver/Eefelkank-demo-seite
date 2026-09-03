@@ -49,19 +49,44 @@ if (!SCHLUESSEL) {
 mkdirSync(ZIEL_DATEN, { recursive: true });
 mkdirSync(ZIEL_BILDER, { recursive: true });
 
-/** Eine Sammlung abrufen, mit allen Einträgen und aufgelösten Verweisen. */
+/**
+ * Eine Sammlung vollstaendig abrufen.
+ *
+ * Blaettert durch alle Seiten. Eine feste Obergrenze waere gefaehrlich: haette
+ * der Verein mehr Eintraege als die Grenze, fehlten die restlichen
+ * stillschweigend - ohne Fehlermeldung, und niemand bemerkte es bis zum Blick
+ * auf die fertige Seite.
+ */
 async function holen(sammlung, zusatz = "") {
-  const adresse = `${CMS}/api/${sammlung}?limit=200&depth=2&where[tenant.slug][equals]=${KUNDE}${zusatz}`;
-  const antwort = await fetch(adresse, {
-    headers: { Authorization: `maschinenzugaenge API-Key ${SCHLUESSEL}` },
-  });
+  const proSeite = 100;
+  const alle = [];
+  let seite = 1;
 
-  if (!antwort.ok) {
-    throw new Error(`CMS antwortete mit ${antwort.status} auf ${sammlung}`);
+  for (;;) {
+    const adresse =
+      `${CMS}/api/${sammlung}?limit=${proSeite}&page=${seite}&depth=2` +
+      `&where[tenant.slug][equals]=${KUNDE}${zusatz}`;
+
+    const antwort = await fetch(adresse, {
+      headers: { Authorization: `maschinenzugaenge API-Key ${SCHLUESSEL}` },
+    });
+
+    if (!antwort.ok) {
+      throw new Error(`CMS antwortete mit ${antwort.status} auf ${sammlung}`);
+    }
+
+    const daten = await antwort.json();
+    alle.push(...(daten.docs ?? []));
+
+    if (!daten.hasNextPage) return alle;
+    seite += 1;
+
+    // Reissleine gegen eine endlose Schleife, falls die Blaetter-Information
+    // einmal falsch zurueckkommt.
+    if (seite > 100) {
+      throw new Error(`Zu viele Seiten bei ${sammlung} - Abruf abgebrochen`);
+    }
   }
-
-  const daten = await antwort.json();
-  return daten.docs ?? [];
 }
 
 /**
@@ -211,6 +236,7 @@ for (const t of termineRoh) {
     image: (await bildHolen(t.image)) ?? "",
     soldOut: t.soldOut || undefined,
     highlight: t.highlight || undefined,
+    hinweise: (t.hinweise ?? []).map((h) => h.text),
   });
 }
 
@@ -256,22 +282,9 @@ if (startseite) {
   schreiben("startseite", { archivbilder: archiv, vorstand });
 }
 
-// ---------------------------------------------------------------------------
-// Hinweise auf den Terminseiten
-// ---------------------------------------------------------------------------
-// Bewusst nachsichtig: gibt es die Sammlung noch nicht, bleibt der bisherige
-// Stand stehen, statt den ganzen Bau scheitern zu lassen.
-let hinweise = [];
-try {
-  const eintraege = await holen("hinweise");
-  hinweise = (eintraege[0]?.punkte ?? []).map((p) => p.text);
-  if (hinweise.length > 0) schreiben("hinweise", hinweise);
-} catch {
-  console.log("Hinweise nicht abrufbar - vorhandener Stand bleibt.");
-}
 
 console.log(
   `CMS eingelesen: ${gruppen.length} Gruppen, ${termine.length} Termine, ` +
-    `${hinweise.length} Hinweise, ${heruntergeladen.size} Bilder.`,
+    `${heruntergeladen.size} Bilder.`,
 );
 }

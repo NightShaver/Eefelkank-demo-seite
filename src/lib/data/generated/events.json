@@ -8,7 +8,13 @@
     "category": "Umzug",
     "description": "TRest1 2131454ffdsf s",
     "image": "/bilder/cms/zepter.jpg",
-    "soldOut": true
+    "soldOut": true,
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "karnevalsausklang-test",
@@ -18,7 +24,13 @@
     "venue": "tsest51312",
     "category": "Versammlung",
     "description": "tsest51312",
-    "image": "/bilder/cms/christian-wolny.jpg"
+    "image": "/bilder/cms/christian-wolny.jpg",
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "damensitzung",
@@ -29,7 +41,13 @@
     "category": "Sitzung",
     "description": "Die ganz besondere Atmosphäre, die es nur auf einer Sitzung von und für Damen gibt.",
     "image": "/bilder/cms/damensitzung-saal.jpg",
-    "soldOut": true
+    "soldOut": true,
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "erste-grosse-sitzung",
@@ -40,7 +58,13 @@
     "category": "Sitzung",
     "description": "Mit der Ersten Großen Sitzung starten wir traditionell in den Sitzungskarneval.",
     "image": "/bilder/cms/korporalschaft-buehne.jpg",
-    "highlight": true
+    "highlight": true,
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "hastenrather-nachmittag",
@@ -50,7 +74,13 @@
     "venue": "Dorfgemeinschaftshalle",
     "category": "Familie",
     "description": "Für Jung und Alt, für die ganze Familie. In guter Tradition gibt es in der Pause ein Stück Kuchen, bitte einen Teller mitbringen.",
-    "image": "/bilder/cms/publikum-krawall.jpg"
+    "image": "/bilder/cms/publikum-krawall.jpg",
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "kindersitzung",
@@ -60,7 +90,13 @@
     "venue": "Dorfgemeinschaftshalle",
     "category": "Familie",
     "description": "Ein buntes Fest für unsere Jüngsten, bei dem alle Kinder stolz ihre Kostüme präsentieren.",
-    "image": "/bilder/cms/kindergarde.jpg"
+    "image": "/bilder/cms/kindergarde.jpg",
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "fruehschoppen",
@@ -70,7 +106,13 @@
     "venue": "St. Wendelinus & Dorfgemeinschaftshalle",
     "category": "Brauchtum",
     "description": "Messe in Rot und Weiß nach kölschem Gebetbuch, danach der karnevalistische Frühschoppen.",
-    "image": "/bilder/cms/jecken-vier.jpg"
+    "image": "/bilder/cms/jecken-vier.jpg",
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "zweite-grosse-sitzung",
@@ -81,7 +123,13 @@
     "category": "Sitzung",
     "description": "Mit Vollgas ins Karnevalswochenende: Lachen, Schunkeln und vor allem Mitsingen.",
     "image": "/bilder/cms/garde-hebefigur.jpg",
-    "highlight": true
+    "highlight": true,
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
   },
   {
     "id": "karnevalsausklang",
@@ -91,6 +139,246 @@
     "venue": "Dorfgemeinschaftshalle",
     "category": "Brauchtum",
     "description": "Gemeinsam lassen wir die Session ausklingen, bis zum nächsten Elften im Elften.",
-    "image": "/bilder/cms/publikum-rot.jpg"
+    "image": "/bilder/cms/publikum-rot.jpg",
+    "hinweise": [
+      "Einlass ist in der Regel eine Stunde vor Beginn. Wer früh kommt, sitzt näher an der Bühne.",
+      "Kostüm ist keine Pflicht, aber gern gesehen, bei den Sitzungen sowieso.",
+      "Für Speisen und Getränke sorgen die Korporalschaften selbst; die Einnahmen bleiben im Verein.",
+      "Fragen zu Tischreservierung, Barrierefreiheit oder Gruppen? Einfach vorab eine Mail schreiben."
+    ]
+  },
+  {
+    "id": "test-sessionseroeffnung",
+    "title": "Sessionseroeffnung",
+    "date": "2027-03-01T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Testtermin zum Ansehen der Liste. Sessionseroeffnung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/zepter.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-moehnensitzung",
+    "title": "Moehnensitzung",
+    "date": "2027-03-04T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Testtermin zum Ansehen der Liste. Moehnensitzung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/wappen.png",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-kappensitzung",
+    "title": "Kappensitzung",
+    "date": "2027-03-07T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Testtermin zum Ansehen der Liste. Kappensitzung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/michael-schuemmer.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-seniorennachmittag",
+    "title": "Seniorennachmittag",
+    "date": "2027-03-10T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Seniorennachmittag in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/markus-breuer.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-kinderkarneval",
+    "title": "Kinderkarneval",
+    "date": "2027-03-13T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Kinderkarneval in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/christian-wolny.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-prinzenproklamation",
+    "title": "Prinzenproklamation",
+    "date": "2027-03-16T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Testtermin zum Ansehen der Liste. Prinzenproklamation in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tischdeko.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-ordensfest",
+    "title": "Ordensfest",
+    "date": "2027-03-19T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Testtermin zum Ansehen der Liste. Ordensfest in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tischdeko-hoch.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-herrensitzung",
+    "title": "Herrensitzung",
+    "date": "2027-03-22T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Testtermin zum Ansehen der Liste. Herrensitzung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tafel.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-tanzturnier",
+    "title": "Tanzturnier",
+    "date": "2027-03-25T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Sitzung",
+    "description": "Testtermin zum Ansehen der Liste. Tanzturnier in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/saal.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-veedelszoch",
+    "title": "Veedelszoch",
+    "date": "2027-03-28T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Umzug",
+    "description": "Testtermin zum Ansehen der Liste. Veedelszoch in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/kueche.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-rosenmontagszug",
+    "title": "Rosenmontagszug",
+    "date": "2027-03-31T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Umzug",
+    "description": "Testtermin zum Ansehen der Liste. Rosenmontagszug in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/aussen.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-nubbelverbrennung",
+    "title": "Nubbelverbrennung",
+    "date": "2027-04-03T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Brauchtum",
+    "description": "Testtermin zum Ansehen der Liste. Nubbelverbrennung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/vereinsfoto.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-jahreshauptversammlung",
+    "title": "Jahreshauptversammlung",
+    "date": "2027-04-06T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Versammlung",
+    "description": "Testtermin zum Ansehen der Liste. Jahreshauptversammlung in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tanzpaar.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-sommerfest",
+    "title": "Sommerfest",
+    "date": "2027-04-09T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Sommerfest in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tanzmariechen.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-kegelturnier",
+    "title": "Kegelturnier",
+    "date": "2027-04-12T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Kegelturnier in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/tanzmariechen-wagen.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-grillabend",
+    "title": "Grillabend",
+    "date": "2027-04-15T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Grillabend in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/showtanz-damen.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-brauereitour",
+    "title": "Brauereitour",
+    "date": "2027-04-18T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Brauereitour in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/saal-publikum.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
+  },
+  {
+    "id": "test-zockernacht",
+    "title": "Zockernacht",
+    "date": "2027-04-21T19:11:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Familie",
+    "description": "Testtermin zum Ansehen der Liste. Zockernacht in der Dorfgemeinschaftshalle.",
+    "image": "/bilder/cms/reihe-buehne.jpg",
+    "hinweise": [
+      "Testtermin. Kann jederzeit geloescht werden."
+    ]
   }
 ]

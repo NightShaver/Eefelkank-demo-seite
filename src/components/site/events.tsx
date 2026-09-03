@@ -103,7 +103,16 @@ export function Events({
         )}
       </div>
 
-      <ul className="relative mt-12 border-t border-creme/20">
+      {/* Ab einer gewissen Laenge scrollt die Liste in sich, statt die Seite
+          endlos zu strecken. Der Kompakt-Modus auf der Startseite zeigt
+          ohnehin nur die naechsten Termine und braucht das nicht. */}
+      <ul
+        className={cn(
+          "relative mt-12 border-t border-creme/20",
+          !kompakt &&
+            "max-h-[46rem] overflow-y-auto pr-2 [scrollbar-color:rgb(var(--gold)/0.5)_transparent] [scrollbar-width:thin]",
+        )}
+      >
         {!kompakt && (
           <RundSticker
             oben="19:11"
