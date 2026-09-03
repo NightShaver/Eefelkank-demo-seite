@@ -281,7 +281,7 @@ export default async function KorpsDetailPage({
             {/* Auf grossen Bildschirmen begrenzt, damit der farbige Kasten
                 links nicht mit der Liste mitwaechst. Ab etwa sechs Eintraegen
                 wird gescrollt statt gestreckt. */}
-            <div className="space-y-10 lg:max-h-[38rem] lg:overflow-y-auto lg:pr-4">
+            <div className="leiste leiste-tinte space-y-10 lg:max-h-[38rem] lg:overflow-x-hidden lg:overflow-y-auto lg:pr-3">
               <AgendaList title="Auftritte" items={auftritte} farbe={korps.farbe} />
               <AgendaList
                 title="Weitere Termine"

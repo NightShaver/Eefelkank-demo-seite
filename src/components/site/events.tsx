@@ -103,16 +103,39 @@ export function Events({
         )}
       </div>
 
-      {/* Ab einer gewissen Laenge scrollt die Liste in sich, statt die Seite
+      {/* Ab etwa acht Terminen scrollt die Liste in sich, statt die Seite
           endlos zu strecken. Der Kompakt-Modus auf der Startseite zeigt
-          ohnehin nur die naechsten Termine und braucht das nicht. */}
-      <ul
-        className={cn(
-          "relative mt-12 border-t border-creme/20",
-          !kompakt &&
-            "max-h-[46rem] overflow-y-auto pr-2 [scrollbar-color:rgb(var(--gold)/0.5)_transparent] [scrollbar-width:thin]",
-        )}
-      >
+          ohnehin nur die naechsten und braucht das nicht.
+
+          Der Aufkleber sitzt bewusst ausserhalb der Liste, in derselben
+          Position wie zuvor: unten rechts. Laege er innerhalb, ragte er durch
+          sein -bottom-16 aus dem Scrollbereich und erzeugte einen
+          waagerechten Balken. */}
+      <div className="relative">
+        <ul
+          className={cn(
+            "relative mt-12 border-t border-creme/20",
+            !kompakt &&
+              "leiste leiste-gold max-h-[46rem] overflow-x-hidden overflow-y-auto pr-3",
+          )}
+        >
+          <AnimatePresence initial={false} mode="popLayout">
+            {list.map((event) => (
+              <motion.li
+                key={event.id}
+                layout
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: EASE }}
+                className="border-b border-creme/20"
+              >
+                <EventZeile event={event} />
+              </motion.li>
+            ))}
+          </AnimatePresence>
+        </ul>
+
         {!kompakt && (
           <RundSticker
             oben="19:11"
@@ -122,23 +145,7 @@ export function Events({
             className="absolute -bottom-16 right-0 z-10 hidden size-24 lg:grid"
           />
         )}
-
-        <AnimatePresence initial={false} mode="popLayout">
-          {list.map((event) => (
-            <motion.li
-              key={event.id}
-              layout
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.5, ease: EASE }}
-              className="border-b border-creme/20"
-            >
-              <EventZeile event={event} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </ul>
+      </div>
 
       {!kompakt && (
         <Reveal delay={0.1}>

@@ -167,3 +167,58 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Scrollbalken fuer Bereiche, die in sich scrollen
+
+   Der Standardbalken des Betriebssystems passt zu nichts auf dieser Seite -
+   grau, breit, eckig. Diese Regeln machen ihn schmal, rund und in der Farbe
+   des jeweiligen Abschnitts.
+
+   Firefox versteht scrollbar-width/-color, die uebrigen Browser die
+   ::-webkit-Pseudoelemente. Beides ist noetig, sonst bleibt es bei einem
+   der beiden Fassungen beim Standard.
+------------------------------------------------------------------ */
+.leiste {
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+.leiste::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.leiste::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.leiste::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+}
+
+/* Auf dunklem Grund, etwa dem Sessionsprogramm */
+.leiste-gold {
+  scrollbar-color: color-mix(in srgb, var(--color-gold) 65%, transparent) transparent;
+}
+
+.leiste-gold::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-gold) 65%, transparent);
+}
+
+.leiste-gold::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-2);
+}
+
+/* Auf hellem Grund, etwa den Auftritten auf den Gruppenseiten */
+.leiste-tinte {
+  scrollbar-color: color-mix(in srgb, var(--color-tinte) 22%, transparent) transparent;
+}
+
+.leiste-tinte::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-tinte) 22%, transparent);
+}
+
+.leiste-tinte::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-tinte) 40%, transparent);
+}
