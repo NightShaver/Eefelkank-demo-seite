@@ -93,10 +93,40 @@ async function bildHolen(bild) {
   return webpfad;
 }
 
+/**
+ * Gesammelte Ergebnisse. Auf die Platte kommen sie erst, wenn alles geladen
+ * ist.
+ *
+ * Der Grund: bricht der Abruf mittendrin ab, laege sonst ein halb ersetzter
+ * Stand im Projekt - neue Gruppen, alte Termine. Lieber gar nichts anfassen
+ * und mit dem eingecheckten Stand bauen.
+ */
+const auszuschreiben = new Map();
+
 function schreiben(name, inhalt) {
-  writeFileSync(join(ZIEL_DATEN, `${name}.json`), JSON.stringify(inhalt, null, 2) + "\n", "utf8");
+  auszuschreiben.set(name, inhalt);
 }
 
+function allesSchreiben() {
+  for (const [name, inhalt] of auszuschreiben) {
+    const inhaltAlsText = JSON.stringify(inhalt, null, 2) + "\n";
+    writeFileSync(join(ZIEL_DATEN, `${name}.json`), inhaltAlsText, "utf8");
+  }
+}
+
+try {
+  await alleInhalteHolen();
+} catch (fehler) {
+  console.log(
+    `CMS nicht erreichbar (${fehler.message}). ` +
+      "Der Auftritt wird mit den eingecheckten Inhalten gebaut.",
+  );
+  process.exit(0);
+}
+
+allesSchreiben();
+
+async function alleInhalteHolen() {
 // ---------------------------------------------------------------------------
 // Gruppenseiten
 // ---------------------------------------------------------------------------
@@ -145,10 +175,12 @@ for (const g of gruppenRoh) {
       time: g.training?.time ?? "",
       place: g.training?.place ?? "",
       note: g.training?.note ?? undefined,
+      bild: await bildHolen(g.training?.bild),
     },
+    // Das CMS liefert einen vollen Zeitstempel, die Seite erwartet JJJJ-MM-TT.
     agenda: (g.agenda ?? []).map((a) => ({
       title: a.title,
-      date: a.date,
+      date: String(a.date ?? "").slice(0, 10),
       time: a.time,
       place: a.place,
       kind: a.kind,
@@ -224,7 +256,22 @@ if (startseite) {
   schreiben("startseite", { archivbilder: archiv, vorstand });
 }
 
+// ---------------------------------------------------------------------------
+// Hinweise auf den Terminseiten
+// ---------------------------------------------------------------------------
+// Bewusst nachsichtig: gibt es die Sammlung noch nicht, bleibt der bisherige
+// Stand stehen, statt den ganzen Bau scheitern zu lassen.
+let hinweise = [];
+try {
+  const eintraege = await holen("hinweise");
+  hinweise = (eintraege[0]?.punkte ?? []).map((p) => p.text);
+  if (hinweise.length > 0) schreiben("hinweise", hinweise);
+} catch {
+  console.log("Hinweise nicht abrufbar - vorhandener Stand bleibt.");
+}
+
 console.log(
   `CMS eingelesen: ${gruppen.length} Gruppen, ${termine.length} Termine, ` +
-    `${heruntergeladen.size} Bilder.`,
+    `${hinweise.length} Hinweise, ${heruntergeladen.size} Bilder.`,
 );
+}

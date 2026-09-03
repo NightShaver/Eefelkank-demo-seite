@@ -738,7 +738,7 @@
     "shortName": "Elferrat",
     "kind": "Führung",
     "founded": 1938,
-    "members": 11,
+    "members": 31,
     "motto": "Elf Sitze, ein Ton: Alaaf",
     "farbe": "#3d0f33",
     "farbeText": "#fbf5ea",
@@ -777,7 +777,7 @@
     ],
     "training": {
       "day": "Monatliche Sitzung",
-      "time": "20:11 Uhr",
+      "time": "20:00 Uhr",
       "place": "Vereinsheim Hastenrath",
       "note": "In der Session wöchentliche Abstimmung."
     },
@@ -801,6 +801,41 @@
         "date": "2027-02-09",
         "time": "19:11 Uhr",
         "place": "Dorfgemeinschaftshalle",
+        "kind": "Auftritt"
+      },
+      {
+        "title": "Test Termin",
+        "date": "2002-04-10",
+        "time": "07:30",
+        "place": "Eschweiler",
+        "kind": "Training"
+      },
+      {
+        "title": "2311",
+        "date": "2002-04-10",
+        "time": "07:30",
+        "place": "Eschweiler",
+        "kind": "Auftritt"
+      },
+      {
+        "title": "1313sdasas",
+        "date": "2002-04-10",
+        "time": "07:30",
+        "place": "Eschweiler",
+        "kind": "Auftritt"
+      },
+      {
+        "title": "1313sdasas",
+        "date": "2002-04-10",
+        "time": "07:30",
+        "place": "Eschweiler",
+        "kind": "Auftritt"
+      },
+      {
+        "title": "1313sdasas",
+        "date": "2002-04-10",
+        "time": "07:30",
+        "place": "Eschweiler",
         "kind": "Auftritt"
       }
     ],
@@ -836,6 +871,10 @@
         "src": "/bilder/cms/jecken-vier.jpg"
       }
     ],
+    "video": {
+      "youtube": "0a7tN4uVNho",
+      "titel": "Eefelkank"
+    },
     "verified": true
   }
 ]

@@ -1,5 +1,26 @@
 [
   {
+    "id": "test-sitzung",
+    "title": "Test Sitzung",
+    "date": "2026-09-18T04:30:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "Dorfgemeinschaftshalle",
+    "category": "Umzug",
+    "description": "TRest1 2131454ffdsf s",
+    "image": "/bilder/cms/zepter.jpg",
+    "soldOut": true
+  },
+  {
+    "id": "karnevalsausklang-test",
+    "title": "tsest51312",
+    "date": "2026-09-20T05:30:00.000Z",
+    "time": "19:11 Uhr",
+    "venue": "tsest51312",
+    "category": "Versammlung",
+    "description": "tsest51312",
+    "image": "/bilder/cms/christian-wolny.jpg"
+  },
+  {
     "id": "damensitzung",
     "title": "Damensitzung",
     "date": "2027-01-14T17:00:00.000Z",

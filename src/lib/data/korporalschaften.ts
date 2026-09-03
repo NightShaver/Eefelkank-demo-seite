@@ -22,6 +22,8 @@ export type Training = {
   time: string;
   place: string;
   note?: string;
+  /** Eigenes Bild fuer den Terminkasten. Ohne Angabe nimmt die Seite gallery[1]. */
+  bild?: string;
 };
 
 export type GroupEvent = {

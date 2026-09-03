@@ -57,6 +57,16 @@ export default async function KorpsDetailPage({
   const auftritte = korps.agenda.filter((a) => a.kind === "Auftritt");
   const sonstige = korps.agenda.filter((a) => a.kind !== "Auftritt");
 
+  /**
+   * Foto im Terminkasten. Die Gruppe kann im CMS eines auswaehlen; ohne Angabe
+   * bleibt es beim zweiten Galeriebild, wie es vor der CMS-Anbindung war.
+   */
+  const terminbild = korps.training.bild
+    ? { src: korps.training.bild, alt: `${korps.name}, fester Termin` }
+    : korps.gallery[1]
+      ? { src: korps.gallery[1].src, alt: korps.gallery[1].caption }
+      : undefined;
+
   return (
     <>
       {/* ---------------------------------------------- Kopf in Gruppenfarbe */}
@@ -250,12 +260,14 @@ export default async function KorpsDetailPage({
                     <ArrowRight className="size-4" aria-hidden />
                   </a>
 
-                  {/* Foto der Gruppe, damit die Karte nicht nur Text ist */}
-                  {korps.gallery[1] && (
+                  {/* Foto im Terminkasten. Die Gruppe kann im CMS ein eigenes
+                      waehlen; ohne Angabe bleibt es wie bisher das zweite
+                      Galeriebild. */}
+                  {terminbild && (
                     <figure className="mt-8 overflow-hidden rounded-2xl border-[4px] border-current/20">
                       <Photo
-                        src={korps.gallery[1].src}
-                        alt={korps.gallery[1].caption}
+                        src={terminbild.src}
+                        alt={terminbild.alt}
                         farbe={korps.farbe}
                         sizes="(max-width: 1024px) 90vw, 30vw"
                         className="aspect-[16/9] w-full"
@@ -266,7 +278,10 @@ export default async function KorpsDetailPage({
               </div>
             </Reveal>
 
-            <div className="space-y-10">
+            {/* Auf grossen Bildschirmen begrenzt, damit der farbige Kasten
+                links nicht mit der Liste mitwaechst. Ab etwa sechs Eintraegen
+                wird gescrollt statt gestreckt. */}
+            <div className="space-y-10 lg:max-h-[38rem] lg:overflow-y-auto lg:pr-4">
               <AgendaList title="Auftritte" items={auftritte} farbe={korps.farbe} />
               <AgendaList
                 title="Weitere Termine"

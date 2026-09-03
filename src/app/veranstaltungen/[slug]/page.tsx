@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, MapPin, Ticket } from "lucide-react";
 import { events, getEvent } from "@/lib/data/events";
 import { site } from "@/lib/data/site";
+import hinweise from "@/lib/data/generated/hinweise.json";
 import { Photo } from "@/components/site/photo";
 import { Reveal, WordReveal } from "@/components/site/motion-primitives";
 import { Konfetti, Sticker, Wappen, ZickZack } from "@/components/site/ornament";
@@ -165,22 +166,9 @@ export default async function VeranstaltungPage({
                   <div className="relative">
                     <p className="eyebrow text-rot">Gut zu wissen</p>
                     <ul className="mt-5 space-y-4 text-tinte-2">
-                      <li>
-                        Einlass ist in der Regel eine Stunde vor Beginn. Wer
-                        früh kommt, sitzt näher an der Bühne.
-                      </li>
-                      <li>
-                        Kostüm ist keine Pflicht, aber gern gesehen, bei den
-                        Sitzungen sowieso.
-                      </li>
-                      <li>
-                        Für Speisen und Getränke sorgen die Korporalschaften
-                        selbst; die Einnahmen bleiben im Verein.
-                      </li>
-                      <li>
-                        Fragen zu Tischreservierung, Barrierefreiheit oder
-                        Gruppen? Einfach vorab eine Mail schreiben.
-                      </li>
+                      {hinweise.map((hinweis) => (
+                        <li key={hinweis}>{hinweis}</li>
+                      ))}
                     </ul>
 
                     <div className="mt-7">
